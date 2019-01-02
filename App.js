@@ -1,9 +1,9 @@
 import React                       from 'react';
 import { AppLoading, Asset, Font } from 'expo';
 
-import MainTabNavigator from 'app/src/navigation/MainTabNavigator';
-import fonts                       from './src/fonts';
-import images                      from './src/images';
+import fonts        from './src/fonts';
+import images       from './src/images';
+import AppNavigator from './src/navigation/AppNavigator';
 
 export default class App extends React.Component {
   static defaultProps = {
@@ -18,8 +18,7 @@ export default class App extends React.Component {
   }
 
   loadResourcesAsync = async () => {
-    await Asset.loadAsync(Object.keys(images)
-      .map(key => images[key]));
+    await Asset.loadAsync(Object.keys(images).map(key => images[key]));
     await Font.loadAsync(fonts);
 
     return true;
@@ -39,7 +38,7 @@ export default class App extends React.Component {
       );
     }
     return (
-      <MainTabNavigator />
+      <AppNavigator/>
     );
   }
 }
