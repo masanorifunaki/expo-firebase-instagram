@@ -1,6 +1,7 @@
 import React                       from 'react';
-import { Text, View }              from 'react-native';
 import { AppLoading, Asset, Font } from 'expo';
+
+import MainTabNavigator from 'app/src/navigation/MainTabNavigator';
 import fonts                       from './src/fonts';
 import images                      from './src/images';
 
@@ -38,14 +39,7 @@ export default class App extends React.Component {
       );
     }
     return (
-      <View style={{
-        flex          : 1,
-        alignItems    : 'center',
-        justifyContent: 'center',
-      }}
-      >
-        <Text>Hello</Text>
-      </View>
+      <MainTabNavigator />
     );
   }
 }
